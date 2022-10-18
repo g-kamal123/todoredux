@@ -1,14 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { AppProvider } from "@shopify/polaris";
+import '@shopify/polaris/build/esm/styles.css';
+import { Provider } from "react-redux";
+import {todoStore} from "./Store/TodoStore"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <Provider store={todoStore}>
+  <AppProvider>
     <App />
-  </React.StrictMode>
+  </AppProvider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

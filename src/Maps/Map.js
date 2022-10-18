@@ -1,0 +1,29 @@
+export const mapToState =(state)=>{
+    return{
+        ...state
+    }
+}
+export const mapToDispatch =(dispatch)=>{
+    return{
+        addTodo:(data)=>dispatch({
+            type:'addTodo',
+            payload:{...data}
+        }),
+        moveToComplete:(i)=>dispatch({
+            type:'movetocomplete',
+            payload:{...i}
+        }),
+        moveToIncomplete:(i)=>dispatch({
+            type:'movetoincomplete',
+            payload:{...i}
+        }),
+        update:(i)=>dispatch({
+            type:'update',
+            payload:{...i}
+        }),
+        delete:(i)=>dispatch({
+            type:'delete',
+            payload:{...i}
+        })
+    }
+}
